@@ -39,7 +39,19 @@ SELECT first_name, last_name
 FROM employees
 WHERE manager_id IS NULL;
 
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary > 50000
+ORDER BY salary DESC;
+
+SELECT first_name, last_name
+FROM employees
+ORDER BY salary DESC
+limit 5;
+
 SELECT * FROM employees;
+
+
 
 
 
