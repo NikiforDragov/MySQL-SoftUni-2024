@@ -87,7 +87,7 @@ UPDATE employees
 SET salary = salary * 1.12
 WHERE department_id = 1
 OR department_id = 4
-OR department_id = 46
+OR department_id = 2
 OR department_id = 11;
 
 SELECT salary
@@ -95,7 +95,27 @@ FROM employees;
 
 SELECT * FROM employees;
 
+-- END of Soft_uni db exercises
 
+SELECT peak_name
+FROM peaks
+ORDER BY peak_name;
+ 
+SELECT country_name, population
+FROM countries
+WHERE continent_code = 'EU'
+ORDER BY population DESC, country_name
+LIMIT 30;
+
+SELECT country_name, country_code, 
+CASE
+WHEN currency_code = 'EUR' THEN 'Euro'
+ELSE 'Not Euro'
+END AS 'Currency'
+FROM countries
+ORDER BY country_name;
+
+SELECT * FROM countries;
 
 
 
