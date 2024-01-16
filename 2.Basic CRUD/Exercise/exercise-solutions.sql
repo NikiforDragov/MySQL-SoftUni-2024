@@ -35,6 +35,12 @@ OR salary = 23600
 OR salary = 25000
 ORDER BY employee_id;
 
+SELECT first_name, last_name
+FROM employees
+WHERE manager_id IS NULL;
+
+SELECT * FROM employees;
+
 
 
 
