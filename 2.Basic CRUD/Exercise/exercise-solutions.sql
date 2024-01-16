@@ -53,7 +53,10 @@ SELECT first_name, last_name
 FROM employees
 WHERE department_id <> 4;
 
-SELECT * FROM employees;
+SELECT * FROM employees
+ORDER BY salary DESC, first_name, last_name DESC, middle_name;
+
+-- SELECT * FROM employees;
 
 
 
