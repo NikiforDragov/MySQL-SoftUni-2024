@@ -17,6 +17,16 @@ ORDER BY employee_id;
 SELECT CONCAT(first_name, '.',last_name,'@','softuni.bg') AS 'full_email_address'
 FROM employees;
 
+SELECT * 
+FROM employees
+WHERE job_title = 'Sales Representative'
+ORDER BY employee_id;
+
+SELECT first_name,last_name,job_title
+FROM employees
+WHERE salary BETWEEN 20000 AND 30000
+ORDER BY employee_id;
+
 
 
 
