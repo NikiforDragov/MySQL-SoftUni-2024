@@ -27,6 +27,13 @@ FROM employees
 WHERE salary BETWEEN 20000 AND 30000
 ORDER BY employee_id;
 
+SELECT CONCAT_WS(' ', first_name,middle_name,last_name) AS 'Full Name'
+FROM employees
+WHERE salary = 12500 
+OR salary = 14000 
+OR salary = 23600
+OR salary = 25000
+ORDER BY employee_id;
 
 
 
