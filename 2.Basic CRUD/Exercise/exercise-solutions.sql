@@ -117,6 +117,12 @@ ORDER BY country_name;
 
 SELECT * FROM countries;
 
+-- END of geography db exercises
+
+SELECT name FROM characters
+ORDER BY name;
+ 
+
 
 
 
