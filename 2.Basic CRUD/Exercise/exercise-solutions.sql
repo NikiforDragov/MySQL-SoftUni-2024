@@ -56,6 +56,12 @@ WHERE department_id <> 4;
 SELECT * FROM employees
 ORDER BY salary DESC, first_name, last_name DESC, middle_name;
 
+CREATE VIEW v_employees_salaries AS
+  SELECT first_name,last_name,salary
+  FROM employees;
+  
+SELECT * FROM v_employees_salaries;
+     
 -- SELECT * FROM employees;
 
 
