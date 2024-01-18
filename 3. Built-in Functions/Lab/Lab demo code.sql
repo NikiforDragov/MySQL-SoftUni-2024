@@ -13,3 +13,6 @@ SELECT title
 FROM books
 WHERE title LIKE 'Harry Potter%'
 ORDER BY id;
+
+SELECT ROUND(SUM(cost), 2)
+FROM books;
