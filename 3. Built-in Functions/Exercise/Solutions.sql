@@ -19,6 +19,16 @@ AND EXTRACT(YEAR from hire_date) >= 1995
 AND EXTRACT(YEAR from hire_date) <= 2005
 ORDER BY employee_id;
 
+-- Exercise 4
+SELECT first_name, last_name
+FROM employees
+WHERE job_title NOT LIKE '%engineer%'
+ORDER BY employee_id;
+
+  
+
+
+
 SELECT EXTRACT(YEAR from hire_date) FROM employees;
 
 
