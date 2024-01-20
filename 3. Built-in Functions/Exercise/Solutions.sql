@@ -56,7 +56,12 @@ FROM employees
 WHERE EXTRACT(YEAR FROM hire_date) > 2000;
 
 SELECT * FROM
-v_employees_hired_after_2000; 
+v_employees_hired_after_2000;
+
+-- Exercise 9
+SELECT first_name, last_name
+FROM employees
+WHERE CHAR_LENGTH(last_name) = 5; 
 
 
 
