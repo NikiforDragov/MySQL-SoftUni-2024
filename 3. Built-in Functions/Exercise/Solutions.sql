@@ -32,7 +32,14 @@ WHERE CHAR_LENGTH(`name`)
 BETWEEN 5 AND 6
 ORDER BY `name`;
 
-
+-- Exercise 6
+SELECT * 
+FROM towns
+WHERE `name` LIKE 'm%' 
+OR `name` LIKE 'k%'
+OR `name` LIKE 'b%'
+OR `name` LIKE 'e%'
+ORDER BY `name`; 
 
 
 
