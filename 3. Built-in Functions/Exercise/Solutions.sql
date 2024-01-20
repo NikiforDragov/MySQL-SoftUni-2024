@@ -72,6 +72,20 @@ WHERE CHAR_LENGTH(last_name) = 5;
   FROM countries
   WHERE country_name LIKE '%a%a%a%'
   ORDER BY iso_code;
+  
+-- Exercise 11
+
+
+-- Part III – Queries for Diablo Database
+
+-- Exercise 12
+SELECT `name`, DATE_FORMAT(`start`, '%Y-%m-%d') AS `start`
+FROM games
+WHERE EXTRACT(YEAR FROM `start`) BETWEEN 2011 AND 2012
+ORDER BY `start`, `name`
+LIMIT 50;
+
+
 
 
 
