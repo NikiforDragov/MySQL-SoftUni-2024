@@ -10,6 +10,16 @@ FROM  employees
 WHERE last_name LIKE '%ei%'
 ORDER BY employee_id;
 
+-- Exercise 3
+SELECT first_name
+FROM employees
+WHERE 
+department_id IN (3,10)
+AND EXTRACT(YEAR from hire_date) >= 1995 
+AND EXTRACT(YEAR from hire_date) <= 2005
+ORDER BY employee_id;
+
+SELECT EXTRACT(YEAR from hire_date) FROM employees;
 
 
 
