@@ -25,11 +25,12 @@ FROM employees
 WHERE job_title NOT LIKE '%engineer%'
 ORDER BY employee_id;
 
-  
-
-
-
-SELECT EXTRACT(YEAR from hire_date) FROM employees;
+-- Exercise 5
+SELECT `name` 
+FROM towns
+WHERE CHAR_LENGTH(`name`) 
+BETWEEN 5 AND 6
+ORDER BY `name`;
 
 
 
