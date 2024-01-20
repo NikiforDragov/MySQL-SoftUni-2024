@@ -47,7 +47,21 @@ FROM towns
 WHERE `name` NOT LIKE 'r%' 
 AND `name` NOT LIKE 'b%'
 AND `name` NOT LIKE 'd%'
-ORDER BY `name`; 
+ORDER BY `name`;
+
+-- Exercise 8
+CREATE VIEW v_employees_hired_after_2000 AS
+SELECT first_name, last_name
+FROM employees
+WHERE EXTRACT(YEAR FROM hire_date) > 2000;
+
+SELECT * FROM
+v_employees_hired_after_2000; 
+
+
+
+
+
 
 
 
