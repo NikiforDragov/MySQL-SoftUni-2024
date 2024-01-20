@@ -90,7 +90,13 @@ SELECT
 user_name,
 SUBSTR(email, (LOCATE('@', email) + 1)) AS 'email provider'
 FROM users
-ORDER BY `email provider`, user_name 
+ORDER BY `email provider`, user_name;
+
+-- Exercise 14
+SELECT user_name, ip_address 
+FROM users
+WHERE ip_address LIKE "___.1%.%.___"
+ORDER BY user_name;
 
 
 
