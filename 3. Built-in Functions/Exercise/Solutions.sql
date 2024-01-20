@@ -1,3 +1,5 @@
+-- Part I – Queries for SoftUni Database
+
 -- Exercise 1
 SELECT first_name, last_name
 FROM  employees
@@ -61,7 +63,15 @@ v_employees_hired_after_2000;
 -- Exercise 9
 SELECT first_name, last_name
 FROM employees
-WHERE CHAR_LENGTH(last_name) = 5; 
+WHERE CHAR_LENGTH(last_name) = 5;
+
+-- Part II – Queries for Geography Database 
+
+-- Exercise 10
+  SELECT country_name, iso_code
+  FROM countries
+  WHERE country_name LIKE '%a%a%a%'
+  ORDER BY iso_code;
 
 
 
