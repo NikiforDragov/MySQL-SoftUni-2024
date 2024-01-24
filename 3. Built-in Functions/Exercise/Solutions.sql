@@ -74,7 +74,11 @@ WHERE CHAR_LENGTH(last_name) = 5;
   ORDER BY iso_code;
   
 -- Exercise 11
-
+SELECT peak_name, river_name,
+LOWER(CONCAT(peak_name, SUBSTRING(river_name, 2)))AS 'mix'
+FROM peaks, rivers
+WHERE RIGHT(peak_name, 1) = LEFT(river_name, 1)
+ORDER BY mix;
 
 -- Part III – Queries for Diablo Database
 
