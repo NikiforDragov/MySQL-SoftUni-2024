@@ -23,6 +23,12 @@ ORDER BY department_id, `Number of employees`;
   GROUP BY department_id
   HAVING `Min Salary` > 800;
   
+  -- Exercise 4
+  SELECT 
+  COUNT(category_id)
+  FROM products
+  WHERE category_id = 2 AND price > 8;
+  
   
   
   
