@@ -121,6 +121,11 @@ FROM wizzard_deposits;
  HAVING `max_salary` NOT BETWEEN 30000 AND 70000
  ORDER BY department_id;
  
+ -- Exercise 15
+ SELECT 
+ COUNT(salary)
+ FROM employees
+ WHERE manager_id IS NULL;
  
  
  
