@@ -127,6 +127,23 @@ FROM wizzard_deposits;
  FROM employees
  WHERE manager_id IS NULL;
  
+ -- Exercise 16
+ SELECT 
+ department_id,
+ MAX(salary) AS `third_highest_salary`
+ FROM employees
+ GROUP BY department_id
+ ORDER BY department_id;
+ 
+ 
+ -- Exercise 18
+ SELECT
+ department_id,
+ SUM(salary) AS `total_salary`
+ FROM employees
+ GROUP BY department_id
+ ORDER BY department_id;
+ 
  
  
  
