@@ -1,5 +1,7 @@
 SELECT * FROM wizzard_deposits;
 
+-- Gringotts DB
+
 -- Exercise 1
  SELECT 	
 COUNT(*) AS 'count'
@@ -96,7 +98,16 @@ FROM wizzard_deposits;
  GROUP BY deposit_group, is_deposit_expired
  ORDER BY deposit_group DESC , is_deposit_expired;
  
+-- Soft_Uni DB
 
-
+-- Exercise 12
+ SELECT 
+ department_id,
+ MIN(salary) AS `minimum_salary`
+ FROM employees
+ WHERE hire_date > '2000-01-01'
+ GROUP BY department_id
+ HAVING department_id IN(2,5,7)
+ ORDER BY department_id;
  
  
