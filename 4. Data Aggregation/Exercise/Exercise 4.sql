@@ -25,6 +25,14 @@ FROM wizzard_deposits;
  GROUP BY deposit_group
  ORDER BY MIN(magic_wand_size)
  LIMIT 1;
+ 
+ -- Exercise 5
+ SELECT 
+ deposit_group,
+ SUM(deposit_amount) AS 'total_sum'
+ FROM wizzard_deposits
+ GROUP BY deposit_group
+ ORDER BY `total_sum`;
 
  
  
