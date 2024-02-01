@@ -31,3 +31,20 @@ SELECT
     CONCAT(first_name, ' ', last_name) AS 'leader_name'
 FROM routes
 	JOIN campers ON routes.leader_id = campers.id;
+    
+-- Exercise 4
+CREATE TABLE mountains(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE peaks(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    mountain_id INT,
+    CONSTRAINT fk_peaks_mountain_id_mountains_id
+		FOREIGN KEY (mountain_id)
+        REFERENCES mountains(id)
+        ON DELETE CASCADE
+);
+
