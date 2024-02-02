@@ -200,7 +200,16 @@ CREATE TABLE order_items(
  );
  
 
-
+-- Exercise 9
+ SELECT 
+ mountain_range,
+ peak_name,
+ elevation AS peak_elevation
+ FROM peaks p
+ JOIN mountains m ON p.mountain_id = m.id
+ WHERE mountain_id = 17
+ ORDER BY peak_elevation DESC;
+ 
 
 
   
