@@ -128,3 +128,23 @@ WHERE
 ORDER BY e.employee_id
 LIMIT 5;
 
+-- Exercise 11
+SELECT 
+    AVG(SALARY) AS 'min_average_salary' 
+FROM employees
+GROUP BY department_id
+ORDER BY 'min_average_salary' 
+LIMIT 1;
+
+-- Exercise 12
+ SELECT 
+ mc.country_code,
+ m.mountain_range,
+ p.peak_name,
+ p.elevation
+ FROM mountains_countries mc
+	JOIN mountains m ON mc.mountain_id = m.id
+    JOIN peaks p ON p.mountain_id = m.id
+ WHERE mc.country_code = 'BG' AND p.elevation > 2835
+ ORDER BY p.elevation DESC;
+
