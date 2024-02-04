@@ -42,8 +42,25 @@ FROM employees AS e
 ORDER BY e.department_id DESC
 LIMIT 5;
 
-
-
+-- Exercise 5
+ SELECT 
+ e.employee_id,
+ first_name
+ FROM employees e
+ LEFT JOIN employees_projects AS ep ON e.employee_id = ep.employee_id
+ ORDER BY employee_id DESC
+ LIMIT 3;
+ 
+ -- Exercise 6
+ SELECT 
+	e.first_name,
+    e.last_name,
+    e.hire_date,
+    d.name AS 'dept_name'
+ FROM employees e
+ JOIN  departments d ON e.department_id = d.department_id AND d.name IN ('Sales', 'Finance')
+ WHERE e.hire_date > '1999-01-01'
+ ORDER BY e.hire_date ASC;
 
 
 
