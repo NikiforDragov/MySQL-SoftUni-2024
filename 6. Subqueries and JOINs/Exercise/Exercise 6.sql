@@ -49,6 +49,7 @@ FROM
     employees e
        LEFT JOIN
     employees_projects AS ep ON e.employee_id = ep.employee_id
+WHERE ep.employee_id IS NULL
 ORDER BY employee_id DESC
 LIMIT 3;
  
@@ -75,7 +76,7 @@ ORDER BY e.hire_date ASC;
  FROM employees e
 	JOIN employees_projects ep ON e.employee_id = ep.employee_id
     JOIN projects p ON ep.project_id = p.project_id
- WHERE p.start_date > '2002-08-13' AND p.end_date IS NULL
+ WHERE DATE(p.start_date) > '2002-08-13' AND p.end_date IS NULL
  ORDER BY e.first_name, `project_name`
  LIMIT 5;
  
@@ -130,10 +131,10 @@ LIMIT 5;
 
 -- Exercise 11
 SELECT 
-    AVG(SALARY) AS 'min_average_salary' 
+    AVG(salary) AS min_average_salary 
 FROM employees
 GROUP BY department_id
-ORDER BY 'min_average_salary' 
+ORDER BY min_average_salary 
 LIMIT 1;
 
 -- Exercise 12
@@ -156,9 +157,12 @@ LIMIT 1;
 	JOIN mountains m ON mc.mountain_id = m.id
  WHERE mc.country_code IN ('BG', 'RU', 'US')
  GROUP BY mc.country_code
- ORDER BY 'mountain_range' DESC;
+ ORDER BY mountain_range DESC;
 
 -- Exercise 14
+ 
+-- Exercise 15*
+ 
  
 -- Exercise 16
 SELECT COUNT(c.country_code) AS 'country_count'
