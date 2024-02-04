@@ -44,25 +44,58 @@ LIMIT 5;
 
 -- Exercise 5
  SELECT 
- e.employee_id,
- first_name
- FROM employees e
- LEFT JOIN employees_projects AS ep ON e.employee_id = ep.employee_id
- ORDER BY employee_id DESC
- LIMIT 3;
+    e.employee_id, first_name
+FROM
+    employees e
+       LEFT JOIN
+    employees_projects AS ep ON e.employee_id = ep.employee_id
+ORDER BY employee_id DESC
+LIMIT 3;
  
  -- Exercise 6
  SELECT 
-	e.first_name,
+    e.first_name,
     e.last_name,
     e.hire_date,
     d.name AS 'dept_name'
+FROM
+    employees e
+        JOIN
+    departments d ON e.department_id = d.department_id
+        AND d.name IN ('Sales' , 'Finance')
+WHERE
+    e.hire_date > '1999-01-01'
+ORDER BY e.hire_date ASC;
+
+-- Exercise 7
+ SELECT 
+ e.employee_id,
+ e.first_name,
+ p.name AS 'project_name'
  FROM employees e
- JOIN  departments d ON e.department_id = d.department_id AND d.name IN ('Sales', 'Finance')
- WHERE e.hire_date > '1999-01-01'
- ORDER BY e.hire_date ASC;
-
-
+	JOIN employees_projects ep ON e.employee_id = ep.employee_id
+    JOIN projects p ON ep.project_id = p.project_id
+ WHERE p.start_date > '2002-08-13' AND p.end_date IS NULL
+ ORDER BY e.first_name, `project_name`
+ LIMIT 5;
+ 
+-- Exercise 8
+SELECT 
+    e.employee_id,
+    e.first_name,
+    CASE
+        WHEN YEAR(p.start_date) < 2005 THEN p.name
+        ELSE NULL
+    END AS 'project_name'
+FROM
+    employees e
+        JOIN
+    employees_projects ep ON ep.employee_id = e.employee_id
+        JOIN
+    projects p ON ep.project_id = p.project_id
+WHERE
+    e.employee_id = 24
+ORDER BY project_name;
 
 
 
