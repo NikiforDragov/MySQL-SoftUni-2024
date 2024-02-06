@@ -27,8 +27,19 @@ END $
 
 CALL usp_get_employees_salary_above(1500.0000) $
 
+-- Exercise 3
+CREATE PROCEDURE usp_get_towns_starting_with(searched VARCHAR(50))
+BEGIN
+	SELECT
+    name AS town_name
+    FROM towns
+    WHERE LEFT(name, LENGTH(searched)) = searched
+    ORDER BY town_name;
+END $
 
+CALL usp_get_towns_starting_with('be') $
 
+DROP PROCEDURE usp_get_towns_starting_with $
 
 
 
