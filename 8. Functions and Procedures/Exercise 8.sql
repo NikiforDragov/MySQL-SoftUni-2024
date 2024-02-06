@@ -57,7 +57,24 @@ DROP PROCEDURE usp_get_towns_starting_with $
  
  CALL usp_get_employees_from_town('Sofia') $
  
-	
+-- Exercise 5
+
+CREATE FUNCTION ufn_get_salary_level(salary_limiter DECIMAL(16,2))
+RETURNS VARCHAR(10)
+DETERMINISTIC
+BEGIN
+ DECLARE result VARCHAR (10);
+	IF salary_limiter < 30000 THEN
+		SET result := 'Low';
+	ELSEIF salary_limiter BETWEEN 30000 AND 50000 THEN
+		SET result := 'Average';
+	ELSE 
+		SET result := 'High';
+    END IF;
+RETURN result;
+END $
+
+SELECT ufn_get_salary_level(10000.00) $ 
 
 
 
