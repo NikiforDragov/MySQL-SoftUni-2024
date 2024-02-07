@@ -203,6 +203,26 @@ BEGIN
     VALUES(old.id, old.balance, new.balance);
 END $
 
+-- Exercise 16
+CREATE TABLE notification_emails(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    recipient INT NOT NULL,
+    subject VARCHAR(2000),
+    body TEXT
+);
+
+CREATE TRIGGER tr_insert
+AFTER INSERT
+ON logs
+FOR EACH ROW
+BEGIN
+	INSERT INTO notification_emails(recipient, subject, body) VALUES
+    (new.account_id,
+    CONCAT('Balance change for account: ', new.account_id),
+    CONCAT('On ', NOW(), ' your balance was changed from ', new.old_sum, ' to ', new.new_sum));
+END $
+
+
 
 
 
