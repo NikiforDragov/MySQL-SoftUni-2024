@@ -93,10 +93,10 @@ CALL usp_get_employees_by_salary_level('Low') $
 
 -- Exercise 7
 CREATE FUNCTION ufn_is_word_comprised(set_of_letters VARCHAR(50), word VARCHAR(50))
-RETURNS INT
+RETURNS TINYINT
 DETERMINISTIC
 BEGIN
-	
+	RETURN word REGEXP CONCAT('^[', set_of_letters, ']+$');
 END $ 
 
 -- Exercise 8
@@ -109,6 +109,12 @@ BEGIN
 END $
 
 CALL usp_get_holders_full_name $
+
+-- Exercise 9
+ 
+
+-- Exercise 10
+  
 
 
 
