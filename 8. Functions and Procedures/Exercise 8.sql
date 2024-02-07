@@ -91,6 +91,31 @@ END;$
 
 CALL usp_get_employees_by_salary_level('Low') $
 
+-- Exercise 7
+CREATE FUNCTION ufn_is_word_comprised(set_of_letters VARCHAR(50), word VARCHAR(50))
+RETURNS INT
+DETERMINISTIC
+BEGIN
+	
+END $ 
+
+-- Exercise 8
+CREATE PROCEDURE usp_get_holders_full_name()
+BEGIN
+	SELECT 
+    CONCAT(first_name, ' ',last_name) AS full_name
+    FROM account_holders
+    ORDER BY full_name, id;
+END $
+
+CALL usp_get_holders_full_name $
+
+
+
+
+
+
+
 
 
 
