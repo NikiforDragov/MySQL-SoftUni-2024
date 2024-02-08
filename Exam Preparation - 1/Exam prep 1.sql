@@ -69,4 +69,19 @@ SELECT
 FROM courses c
 WHERE c.id <= 5;  
 
+-- --------
+
+UPDATE universities
+SET tuition_fee = tuition_fee + 300
+WHERE id BETWEEN 5 AND 12;
+
+-- --------
+
+ 
+
+
+
+
+
+  
 
