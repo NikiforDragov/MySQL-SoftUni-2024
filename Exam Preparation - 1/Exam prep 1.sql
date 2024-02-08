@@ -82,6 +82,33 @@ WHERE number_of_staff IS NULL;
 
 -- --------
 
+SELECT * FROM cities
+ORDER BY population DESC;
+
+-- ---------
+
+SELECT 
+	first_name,
+    last_name,
+    age,
+    phone,
+    email
+FROM students
+WHERE age >= 21
+ORDER BY first_name DESC, email, id
+LIMIT 10;
+
+-- ---------
+
+SELECT 
+	CONCAT_WS(' ',first_name, last_name) AS full_name,
+    SUBSTR(email, 2, 10) AS username,
+    REVERSE(phone) AS `password`
+FROM students s
+LEFT JOIN students_courses sc ON s.id = sc.student_id
+WHERE sc.student_id IS NULL
+ORDER BY `password` DESC; 
+
 
 
 
