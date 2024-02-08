@@ -77,7 +77,12 @@ WHERE id BETWEEN 5 AND 12;
 
 -- --------
 
- 
+DELETE FROM universities
+WHERE number_of_staff IS NULL;
+
+-- --------
+
+
 
 
 
