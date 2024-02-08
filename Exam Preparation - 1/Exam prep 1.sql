@@ -179,8 +179,26 @@ FROM students s
     JOIN courses c ON c.id = sc.course_id
 WHERE c.name = 'Quantum Physics' AND s.is_graduated = 1;
 
+-- -------
 
+DELIMITER $$
 
+CREATE PROCEDURE udp_graduate_all_students_by_year(year_started INT)
+BEGIN
+	UPDATE students s
+	JOIN students_courses sc ON s.id = sc.student_id
+    JOIN courses c ON c.id = sc.course_id
+SET s.is_graduated = 1
+WHERE YEAR(c.start_date) = year_started;
+END $$
+
+DELIMITER ;
+
+UPDATE students s
+	JOIN students_courses sc ON c.id = sc.course_id
+    JOIN students s ON s.id = sc.student_id
+SET s.is_graduated = 1
+WHERE c.start_date > '2017-01-01';
 
 
   
